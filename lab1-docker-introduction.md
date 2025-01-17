@@ -53,22 +53,60 @@ Logout and Login before executing below commands
 4. Open a web browser and visit `http://localhost:8080` to confirm nginx is running.
 
 ---
+### **Lab 2: Working with Containers**
 
+#### **Objective:**
+Understand how to start, list, interact with, and manage Docker containers.
 
-### **Submission Requirements**
-1. Screenshots of the following:
-   - Pulling the **nginx** image.
-   - Running the default nginx container.
-   - Custom **index.html** file content displayed in a browser.
-   - Docker Hub repository showing the pushed image.
-2. Docker commands used for each task, listed step by step.
+#### **Tasks:**
 
----
+**Starting a Container:**
+Run a container using the **Ubuntu** image in interactive mode:
+  ```bash
+  docker run -it ubuntu
+  ```
+Inside the container, run the command:
+  ```bash
+  echo "Hello from Ubuntu!"
+  ```
+Exit the container by typing `exit`.
 
-### **Evaluation Criteria**
-- Proper execution of all commands and tasks.
-- Successful creation and display of the custom web page.
-- Correctly tagged and pushed image to Docker Hub.
-- Clarity and completeness of screenshots and documentation.
+**Listing Containers:**
+View running containers:
+  ```bash
+  docker ps
+  ```
+View all containers (including stopped ones):
+  ```bash
+  docker ps -a
+  ```
 
-Let me know if you need further assistance or clarifications!
+**Stopping and Removing Containers:**
+Start a new **Alpine** container:
+  ```bash
+  docker run -d --name my-alpine alpine sleep 300
+  ```
+Stop the container:
+  ```bash
+  docker stop my-alpine
+  ```
+Remove the container:
+  ```bash
+  docker rm my-alpine
+  ```
+
+**Interactive Mode:**
+Run a new **nginx** container in detached mode:
+  ```bash
+  docker run -d --name my-nginx nginx
+  ```
+Attach to the running container:
+  ```bash
+  docker exec -it my-nginx bash
+  ```
+Run the command:
+  ```bash
+  ls /usr/share/nginx/html
+  ```
+Exit the container's shell by typing `exit`.
+
