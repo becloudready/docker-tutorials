@@ -42,68 +42,11 @@ Identify unused images and clean up the system using:
   docker system prune
   ```
 
----
 
-### **Lab 2: Working with Containers**
-
-#### **Objective:**
-Understand how to start, list, interact with, and manage Docker containers.
-
-#### **Tasks:**
-
-**Starting a Container:**
-Run a container using the **Ubuntu** image in interactive mode:
-  ```bash
-  docker run -it ubuntu
-  ```
-Inside the container, run the command:
-  ```bash
-  echo "Hello from Ubuntu!"
-  ```
-Exit the container by typing `exit`.
-
-**Listing Containers:**
-View running containers:
-  ```bash
-  docker ps
-  ```
-View all containers (including stopped ones):
-  ```bash
-  docker ps -a
-  ```
-
-**Stopping and Removing Containers:**
-Start a new **Alpine** container:
-  ```bash
-  docker run -d --name my-alpine alpine sleep 300
-  ```
-Stop the container:
-  ```bash
-  docker stop my-alpine
-  ```
-Remove the container:
-  ```bash
-  docker rm my-alpine
-  ```
-
-**Interactive Mode:**
-Run a new **nginx** container in detached mode:
-  ```bash
-  docker run -d --name my-nginx nginx
-  ```
-Attach to the running container:
-  ```bash
-  docker exec -it my-nginx bash
-  ```
-Run the command:
-  ```bash
-  ls /usr/share/nginx/html
-  ```
-Exit the container's shell by typing `exit`.
 
 ---
 
-### **Lab 3: Combining Image and Container Management**
+### Combining Image and Container Management**
 
 #### **Objective:**
 Learn how to combine image and container operations to create a workflow.
