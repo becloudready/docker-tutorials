@@ -45,7 +45,7 @@
 #### Push the Image to Docker Hub**
 1. Log in to Docker Hub using the `docker login` command:
    ```bash
-   docker login - u becloudready
+   docker login - u <your-dockerhub-username>
    ```
 2. Tag your custom image to match your Docker Hub repository:
    ```bash
