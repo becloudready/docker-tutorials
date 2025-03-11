@@ -11,7 +11,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 # Copy the rest of the application code
 COPY . .
-ENV OPENAI_API_KEY none 
+ENV OPENAI_API_KEY=none 
 # Expose Streamlit's default port
 EXPOSE 8501
 
