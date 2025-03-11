@@ -6,7 +6,7 @@
 - Docker installed on your system
 - Basic knowledge of Docker commands
 
-## 1. Build the Streamlit Chatbot Docker Image
+## Build the Streamlit Chatbot Docker Image
 
 ### Build the Docker Image
 
@@ -16,12 +16,17 @@ Run the following command in the same directory as the `Dockerfile`:
 docker build -t ai-chatbot .
 ```
 
-## 2. Run Ollama on Docker
+## Run Ollama on Docker
 
 To run Ollama with the LLaMA 3.2:1B model, execute:
 
 ```sh
 docker run -d --name ollama -p 11434:11434 ollama/ollama:latest
+```
+If you have GPU in your machine then use
+
+```sh
+docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
 
 Pull and prepare the LLaMA 3.2:1B model:
@@ -30,12 +35,12 @@ Pull and prepare the LLaMA 3.2:1B model:
 docker exec -it ollama ollama pull llama3.2:1b
 ```
 
-## 3. Run the Streamlit Chatbot Container
+## Run the Streamlit Chatbot Container
 
 Once Ollama is running, start the chatbot container:
 
 ```sh
-docker run -d --name ai-chatbot -p 8501:8501  streamlit-chatbot
+docker run -d --name ai-chatbot -p 8501:8501  ai-chatbot
 ```
 
 Get the Container IP of the Ollama Container
@@ -57,7 +62,7 @@ On Linux/Mac
 docker inspect 2cf4d51a43c9 | grep IPAddress
 ```
 
-## 4. Access the Chatbot
+## Access the Chatbot
 
 Open your browser and visit:
 
@@ -66,7 +71,23 @@ http://localhost:8501
 ```
 Update the Backend URL
 
-## 5. Stop and Remove Containers
+### Check if Ollama is serving your model
+
+For CPU Only 
+```
+docker exec ollama ollama ps
+NAME           ID              SIZE      PROCESSOR    UNTIL
+llama3.2:1b    baf6a787fdff    2.2 GB    100% CPU     4 minutes from now
+```
+With GPU support
+
+```
+docker exec ollama ollama ps
+NAME           ID              SIZE      PROCESSOR    UNTIL
+llama3.2:1b    baf6a787fdff    2.7 GB    100% GPU     4 minutes from now
+```
+
+## Stop and Remove Containers
 
 To stop and remove all running containers:
 
