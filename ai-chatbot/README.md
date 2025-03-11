@@ -1,5 +1,6 @@
 # Streamlit Chatbot with Ollama (LLaMA 3.2:1B) on Docker
 
+![ai chatbot docker](https://github.com/user-attachments/assets/54c784f2-b3c4-4270-81b7-9b2e5a10e2d6)
 
 ## Prerequisites
 
