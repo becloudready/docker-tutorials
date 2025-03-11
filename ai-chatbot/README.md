@@ -35,7 +35,7 @@ docker exec -it ollama ollama pull llama3:1b
 Once Ollama is running, start the chatbot container:
 
 ```sh
-docker run -d --name chatbot -p 8501:8501  streamlit-chatbot
+docker run -d --name ai-chatbot -p 8501:8501  streamlit-chatbot
 ```
 
 Get the Container IP of the Ollama Container
