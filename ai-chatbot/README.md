@@ -71,6 +71,9 @@ http://localhost:8501
 ```
 Update the Backend URL
 
+![image](https://github.com/user-attachments/assets/8e8b9004-a072-47be-b9c5-f314eda6ef8a)
+
+
 ### Check if Ollama is serving your model
 
 For CPU Only 
