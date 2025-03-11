@@ -27,7 +27,7 @@ docker run -d --name ollama -p 11434:11434 ollama/ollama:latest
 Pull and prepare the LLaMA 3.2:1B model:
 
 ```sh
-docker exec -it ollama ollama pull llama3:1b
+docker exec -it ollama ollama pull llama3.2:1b
 ```
 
 ## 3. Run the Streamlit Chatbot Container
