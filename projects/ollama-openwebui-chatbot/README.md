@@ -48,6 +48,11 @@ Sat Apr 19 13:35:25 2025
 ```
 docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
 ```
+CPU Only option
+
+```
+docker run -d -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+```
 
 Output
 
@@ -141,6 +146,11 @@ Expected Output
 
 In this example the IP of Ollama container is `172.17.0.2`
 
+Set the environment variable for IP in Powershell
+
+```
+$env:OLLAMA_IP = "172.17.0.2"
+```
 ### Step 4: Run Open Web UI with Ollama container IP
 
 ```
